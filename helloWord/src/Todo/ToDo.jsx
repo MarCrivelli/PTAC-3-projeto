@@ -22,11 +22,10 @@ export default function UparImagem() {
     }
     return (
         <div>
-            <h1>To do List</h1>
             <Link to="/">Home</Link>
             <h1>Galeria de Pixel Art</h1>
             <form onSubmit={salvar}> 
-                <input value={selecionarImagem}
+                <input type="file" accept="image/*" onChange={procurarArquivo} value={selecionarImagem}
                 //O target é uma referência ao objeto que enviou o evento. Por exemplo, quando você quer captuar o que foi dgitado em um campo input de um form, você utiliza o "event.target.value", ou seja, você irá capturar do input do form o valor que foi digitado.
                 onChange={(e)=> S(e.target.value)}/>
                 <button>ADD</button>
