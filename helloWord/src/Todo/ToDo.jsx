@@ -12,13 +12,19 @@ export default function UparImagem() {
     //Após isso a lista é atualizada pela função "setLista". O conteúdo da lista está sendo salvo e em seguida é adicionado um novo trecho como o novo valor de selecionarImagem (valor esse que o usuário coloca no "input") 
     setLista([...lista, {selecionarImagem:selecionarImagem}]);};
 
-    const procurarArquivo = (e) => {}
+    // A função "procurarArquivo" vai ser chamada quando o usuário escolher uma imagem
+    const procurarArquivo = (e) => {
+        //Essa const está acessando a propriedade files do elemento de input do arquivo (e.target.files). Como o "input" aceita vários arquivos, está sendo considerado apenas o primeiro, por isso o índice "[0]"
+        const arquivoSelecionado = e.target.files[0];
+        if(arquivoSelecionado){
+            setSelecionarImagem(URL.createObjectURL(arquivoSelecionado));
+        }
+    }
     return (
         <div>
             <h1>To do List</h1>
             <Link to="/">Home</Link>
             <h1>Galeria de Pixel Art</h1>
-            <p>{selecionarImagem}</p>
             <form onSubmit={salvar}> 
                 <input value={selecionarImagem}
                 //O target é uma referência ao objeto que enviou o evento. Por exemplo, quando você quer captuar o que foi dgitado em um campo input de um form, você utiliza o "event.target.value", ou seja, você irá capturar do input do form o valor que foi digitado.
