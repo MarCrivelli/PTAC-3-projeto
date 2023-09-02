@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function UparImagem() {
-//O "useState" está criando uma variável, chamada "selecionarImagem" e também a função "S". selecionarImagem está sendo executada como uma string vazia, que vai guardar o que o usuário digitar.
+//O "useState" está criando uma variável, chamada "selecionarImagem" e também a função "setSelecionar imagem" para que a função "selecionarImagem" seja atualizada. selecionarImagem está sendo definida como "null", pois ela não vai conter imagens até o usuário inserir.
 //O useState permite que você adicione estado a um componente funcional no React.
     const [selecionarImagem, setSelecionarImagem] = useState(null);
     //a variável "lista" vai guardar o que o usuário digitar, formando uma lista
@@ -11,11 +11,13 @@ export default function UparImagem() {
     const salvar = (e) => {e.preventDefault();
     //Após isso a lista é atualizada pela função "setLista". O conteúdo da lista está sendo salvo e em seguida é adicionado um novo trecho como o novo valor de selecionarImagem (valor esse que o usuário coloca no "input") 
     setLista([...lista, {selecionarImagem:selecionarImagem}]);};
+
+    const procurarArquivo = (e) => {}
     return (
         <div>
             <h1>To do List</h1>
             <Link to="/">Home</Link>
-            <h1>Lista de selecionarImagems</h1>
+            <h1>Galeria de Pixel Art</h1>
             <p>{selecionarImagem}</p>
             <form onSubmit={salvar}> 
                 <input value={selecionarImagem}
