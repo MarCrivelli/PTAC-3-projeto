@@ -42,7 +42,7 @@ export default function UparImagem() {
                 <input type="file" accept="image/*" onChange={procurarArquivo} value={selecionarImagem}/>
                 {selecionarImagem && <img src={selecionarImagem} alt="Imagem selecionada" />}
             </form>
-            {lista.map((ativ)=> <p>{ativ.selecionarImagem}</p>)}
+            {lista.map((ativ)=> <img>{ativ.selecionarImagem}</img>)}
         </div> 
          //O map vai percorrer cada item da lista. Isso vai fazer com que, para cada item, seja criado um parágrafo.
     );
