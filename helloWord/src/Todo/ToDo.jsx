@@ -12,7 +12,7 @@ export default function UparImagem() {
 
 
     //Após isso a lista é atualizada pela função "setLista". O conteúdo da lista está sendo salvo e em seguida é adicionado um novo trecho como o novo valor de selecionarImagem (valor esse que o usuário coloca no "input") 
-    setLista([...lista, {selecionarImagem:selecionarImagem}]);};
+    setLista([...lista, {selecionarImagem:selecionarImagem}]);
 
 
     // A função "procurarArquivo" vai ser chamada quando o usuário escolher uma imagem
@@ -43,13 +43,19 @@ export default function UparImagem() {
         <div>
             <Link to="/">Home</Link>
             <h1>Galeria de Pixel Art</h1>
+            <p>deixe aqui sua Pixel art 😃</p>
             <form> 
                 <input type="file" accept="image/*" onChange={procurarArquivo}/>
                 {selecionarImagem && (
                   <div>
-                    <img>
-                    src=
-                    </img>
+                    <img
+                    src= {selecionarImagem}
+                    alt="Image selecionada"
+                    className="imagemSelecionada"
+                    style={{
+                        maxWidth: selecionarImagem.width > selecionarImagem.height ? "400px" : "300px",
+                    }}
+                    ></img>
                   </div>
                 )}
             </form>
@@ -57,4 +63,4 @@ export default function UparImagem() {
         </div> 
          //O map vai percorrer cada item da lista. Isso vai fazer com que, para cada item, seja criado um parágrafo.
     );
-}
+}    
