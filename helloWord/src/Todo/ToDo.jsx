@@ -39,11 +39,10 @@ export default function UparImagem() {
         }
     };
 
-    const removerImagem = () => {
-        if (selecionarImagem){
-            setLista([...lista, selecionarImagem]);
-            setSelecionarImagem(null);
-        }
+    const removerImagem = (index) => {
+        const novaLista = [...lista];
+        novaLista.splice(index, 1);
+        setLista(novaLista)
     };
 
     return (
