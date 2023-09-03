@@ -42,7 +42,7 @@ export default function UparImagem() {
     const removerImagem = (index) => {
         const novaLista = [...lista];
         novaLista.splice(index, 1);
-        setLista(novaLista)
+        setLista(novaLista);
     };
 
     return (
@@ -64,9 +64,11 @@ export default function UparImagem() {
                     }}
                     ></img>
                     <button onClick={salvar}>Salvar</button>
+                    <button onClick={() => removerImagem(index)}>Remover</button>
                   </div>
                 )}
             </form>
+        
         
                 {lista.map((imagemURL, index) => (
                  <div key={index}>
@@ -82,6 +84,6 @@ export default function UparImagem() {
                 </div>
             ))}
         </div>
-         //O map vai percorrer cada item da lista. Isso vai fazer com que, para cada item, seja criado um parágrafo.
+        //O map vai percorrer cada item da lista. Isso vai fazer com que, para cada item, seja criado um parágrafo.
     );
 }    
