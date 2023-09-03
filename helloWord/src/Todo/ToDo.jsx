@@ -34,17 +34,17 @@ export default function UparImagem() {
             setSelecionarImagem(URL.createObjectURL(arquivoSelecionado));
         }
     }
+    const salvar = () => {}
     return (
         <div>
             <Link to="/">Home</Link>
             <h1>Galeria de Pixel Art</h1>
             <form onSubmit={salvar}> 
                 <input type="file" accept="image/*" onChange={procurarArquivo}/>
-                {selecionarImagem && <img src={selecionarImagem} alt="Imagem selecionada" className="imagem" />}
+                {selecionarImagem && <img src={selecionarImagem} alt="Imagem selecionada" className="imagem"  />}
             </form>
-            
+
         </div> 
          //O map vai percorrer cada item da lista. Isso vai fazer com que, para cada item, seja criado um parágrafo.
     );
 }
-
