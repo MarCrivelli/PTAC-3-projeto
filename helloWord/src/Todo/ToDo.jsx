@@ -39,6 +39,13 @@ export default function UparImagem() {
         }
     };
 
+    const removerImagem = () => {
+        if (selecionarImagem){
+            setLista([...lista, selecionarImagem]);
+            setSelecionarImagem(null);
+        }
+    };
+
     return (
         <div>
             <Link to="/">Home</Link>
