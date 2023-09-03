@@ -11,10 +11,6 @@ export default function UparImagem() {
     const [lista, setLista] = useState([]);
 
 
-    //A função "e.preventDefault()" está sendo chamada para evitar o comportamento padrão do documento HTML, que é recarregar a página quando o formulário é enviado
-    const salvar = (e) => {e.preventDefault();
-
-
     //Após isso a lista é atualizada pela função "setLista". O conteúdo da lista está sendo salvo e em seguida é adicionado um novo trecho como o novo valor de selecionarImagem (valor esse que o usuário coloca no "input") 
     setLista([...lista, {selecionarImagem:selecionarImagem}]);};
 
@@ -31,22 +27,31 @@ export default function UparImagem() {
         if(arquivoSelecionado){
 
             //Se um arquivo foi selecionado, a função "URL.createObjectURL" vai criar uma URL para meio que "representar" o arquivo que vai ser selecionado. A mesma é atribuida a variável "arquivoSelecionado" usando setSelecionarImagem, o que faz com que a imagem seja exibida na página.
-            setSelecionarImagem(URL.createObjectURL(arquivoSelecionado));
+            const imagemURL = URL.createObjectURL(arquivoSelecionado);
+            setSelecionarImagem(imagemURL)
         }
     }
+
     const salvar = () => {
         if (selecionarImagem){
             setLista([...lista, selecionarImagem]);
-            setSelecionarImagem();
+            setSelecionarImagem(null);
         }
     };
+
     return (
         <div>
             <Link to="/">Home</Link>
             <h1>Galeria de Pixel Art</h1>
-            <form onSubmit={salvar}> 
+            <form> 
                 <input type="file" accept="image/*" onChange={procurarArquivo}/>
-                {selecionarImagem && <img src={selecionarImagem} alt="Imagem selecionada" className="imagem"  />}
+                {selecionarImagem && (
+                  <div>
+                    <img>
+                    src=
+                    </img>
+                  </div>
+                )}
             </form>
 
         </div> 
