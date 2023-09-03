@@ -54,13 +54,28 @@ export default function UparImagem() {
                     className="imagemSelecionada"
                     style={{
                         maxWidth: selecionarImagem.width > selecionarImagem.height ? "400px" : "300px",
+                        maxHeight: selecionarImagem.width > selecionarImagem.height ? "300px" : "400px",
                     }}
                     ></img>
+                    <button onClick={salvar}>Salvar</button>
                   </div>
                 )}
             </form>
-
-        </div> 
+        
+                {lista.map((imagemURL, index) => (
+                 <div key={index}>
+                     <img
+                     src={imagemURL}
+                     alt={`Imagem ${index + 1}`}   
+                     className="imagemSelecionada"
+                     style={{
+                        maxWidth: selecionarImagem.width > selecionarImagem.height ? "400px" : "300px",
+                        maxHeight: selecionarImagem.width > selecionarImagem.height ? "300px" : "400px",
+                    }}
+                     />
+                </div>
+            ))}
+        </div>
          //O map vai percorrer cada item da lista. Isso vai fazer com que, para cada item, seja criado um parágrafo.
     );
 }    
