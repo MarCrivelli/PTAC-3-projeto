@@ -29,18 +29,32 @@ export default function UparImagem() {
     };
 
     const salvar = () => {
+        // o "if (selecionarImagem)" vai ver se uma imagem foi selecionada
         if (selecionarImagem){
+            //o "setLista" vai pegar a imagem que o usuário selecionou e vai atualizar o estado "lista"
             setLista([...lista, selecionarImagem]);
+            //a seleção de imagem é definida como nula novamente, permitindo que outra imagem seja selecionada
             setSelecionarImagem(null);
         }
     };
 
     const removerImagem = (index) => {
+        //é feita uma cópia da lista existe, chamada "novaLista"
         const novaLista = [...lista];
+
+
+        //a função "novaLista.splice(index, 1);" vai remover a imagem de acordo com o índice
         novaLista.splice(index, 1);
+
+
+        //então a lista é definida como "novaLista", sem a imagem removida
         setLista(novaLista);
     };
-
+    //formulário que contém um campo de seleção de arquivo e botões para salvar e remover imagens.
+    //o "input" faz com que seja criado um campo de seleção de arquivo que permite ao usuário escolher uma imagem. Quando uma imagem é selecionada, a função procurarArquivo é chamada
+    //"{selecionarImagem && (" é uma condição que verifica se há uma imagem selecionada (selecionarImagem) e, se houver, ativa a o que tem dentro dela
+    //"<button onClick={() => removerImagem(index)}>Remover</button>"" cria um botão "Remover" que chama a função "removerImagem" com o índice da imagem, quando clicada
+    //"{lista.map(...)}" mapeia a lista de imagens e renderiza cada imagem da lista, com um botão "Remover" em cada.
     return (
         <div>
             <Link to="/">Home</Link>
