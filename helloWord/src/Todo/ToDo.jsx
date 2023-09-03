@@ -34,7 +34,12 @@ export default function UparImagem() {
             setSelecionarImagem(URL.createObjectURL(arquivoSelecionado));
         }
     }
-    const salvar = () => {}
+    const salvar = () => {
+        if (selecionarImagem){
+            setLista([...lista, selecionarImagem]);
+            setSelecionarImagem();
+        }
+    };
     return (
         <div>
             <Link to="/">Home</Link>
