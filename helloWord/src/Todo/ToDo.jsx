@@ -70,7 +70,8 @@ export default function UparImagem() {
                     className="imagemSelecionada"
                     style={{
                         maxWidth: selecionarImagem.width > selecionarImagem.height ? "400px" : "300px",
-                        maxHeight: selecionarImagem.width > selecionarImagem.height ? "300px" : "400px"
+                        maxHeight: selecionarImagem.width > selecionarImagem.height ? "300px" : "400px",
+                        boxShadow:"6px 5px grey"
                     }}
                     />
                     <button onClick={salvar}>Salvar</button>
