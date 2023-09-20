@@ -58,8 +58,8 @@ export default function UparImagem() {
     return (
         <div>
             <Link style={{backgroundColor:"#FF00A2", border:"3px solid #CB0081", borderRadius:"5px", color:"white", fontSize:"30px", textDecoration:"none", padding:"10px 99% 10px 10px", position:"absolute", left:"0", right:"0", display:"flex"}} to="/">Home</Link>
-            <h1>Galeria de Pixel Art</h1>
-            <p>deixe aqui sua Pixel art 😃</p>
+            <h1>Galeria de arte digital</h1>
+            <p>deixe aqui a sua 😃</p>
             <form> 
                 <input style={{margin:" 10px 0px 10px 0px"}} type="file" accept="image/*" onChange={procurarArquivo}/>
                 {selecionarImagem && (
@@ -82,6 +82,7 @@ export default function UparImagem() {
             <div style={{ display:"flex", flexWrap:"wrap"}}>
                 {lista.map((imagemURL, index) => (
                  <div key={index} style={{margin:"1%", textAlign:"center"}}>
+                    <div style={{display:"inline-block"}}>
                      <img
                      src={imagemURL}
                      alt={`Imagem ${index + 1}`}   
@@ -92,8 +93,11 @@ export default function UparImagem() {
                         boxShadow: "6px 5px grey"
                     }}
                     />
-                    <button onClick={() => removerImagem(index)}>Remover</button>
+                    <div>
+                    <button style={{width: "100%", padding:"10px", marginTop: '10px', border: "2px solid #8F07F7", borderRadius: "5px", color: "white", backgroundColor: "#8F07F7", boxShadow: "3px 4px #7106C3"}}onClick={() => removerImagem(index)}>Remover</button>
                 </div>
+            </div>
+        </div>  
                 ))}
             </div>
         </div>
