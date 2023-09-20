@@ -57,7 +57,7 @@ export default function UparImagem() {
     //"{lista.map(...)}" mapeia a lista de imagens e renderiza cada imagem da lista, com um botão "Remover" em cada.
     return (
         <div>
-            <Link style={{backgroundColor:"#FF00A2", border:"3px solid #CB0081",}} to="/">Home</Link>
+            <Link style={{backgroundColor:"#FF00A2", border:"3px solid #CB0081", borderRadius:"5px", color:"white", fontSize:"30px", textDecoration:"none", padding:"10px 99% 10px 10px", position:"absolute", left:"0", right:"0", display:"flex"}} to="/">Home</Link>
             <h1>Galeria de Pixel Art</h1>
             <p>deixe aqui sua Pixel art 😃</p>
             <form> 
