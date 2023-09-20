@@ -61,7 +61,7 @@ export default function UparImagem() {
             <h1>Galeria de Pixel Art</h1>
             <p>deixe aqui sua Pixel art 😃</p>
             <form> 
-                <input type="file" accept="image/*" onChange={procurarArquivo}/>
+                <input style={{margin:" 10px 0px 10px 0px"}} type="file" accept="image/*" onChange={procurarArquivo}/>
                 {selecionarImagem && (
                   <div>
                     <img
