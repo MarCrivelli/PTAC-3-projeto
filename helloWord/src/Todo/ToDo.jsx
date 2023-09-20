@@ -81,14 +81,15 @@ export default function UparImagem() {
             </form>
             <div style={{ display:"flex", flexWrap:"wrap"}}>
                 {lista.map((imagemURL, index) => (
-                 <div key={index}>
+                 <div key={index} style={{margin:"1%", textAlign:"center"}}>
                      <img
                      src={imagemURL}
                      alt={`Imagem ${index + 1}`}   
                      className="imagemSelecionada"
                      style={{
                         maxWidth: imagemURL.width > imagemURL.height ? "400px" : "300px",
-                        maxHeight: imagemURL.width > imagemURL.height ? "300px" : "400px"
+                        maxHeight: imagemURL.width > imagemURL.height ? "300px" : "400px",
+                        boxShadow: "6px 5px grey"
                     }}
                     />
                     <button onClick={() => removerImagem(index)}>Remover</button>
