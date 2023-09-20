@@ -75,11 +75,11 @@ export default function UparImagem() {
                     }}
                     />
                     <button style={{alignItems:"right", padding:"7px"}} onClick={salvar}>Salvar</button>
-                    <button onClick={() => removerImagem(index)}>Remover</button>
+                    <button style={{alignItems:"right", padding:"7px", marginLeft:"9.4%", marginTop:"10px"}} onClick={() => removerImagem(index)}>Remover</button>
                   </div>
                 )}
             </form>
-            <div>
+            <div style={{ display:"flex", flexWrap:"wrap"}}>
                 {lista.map((imagemURL, index) => (
                  <div key={index}>
                      <img
