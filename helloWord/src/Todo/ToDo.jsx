@@ -74,7 +74,7 @@ export default function UparImagem() {
                         boxShadow:"6px 5px grey"
                     }}
                     />
-                    <button onClick={salvar}>Salvar</button>
+                    <button style={{alignItems:"right", padding:"7px"}} onClick={salvar}>Salvar</button>
                     <button onClick={() => removerImagem(index)}>Remover</button>
                   </div>
                 )}
