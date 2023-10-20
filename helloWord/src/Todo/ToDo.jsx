@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { func } from "prop-types";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function UparImagem() {
@@ -8,12 +9,16 @@ export default function UparImagem() {
 
 
     //a variável "lista" vai guardar o que o usuário digitar, formando uma lista
-    const [lista, setLista] = useState([]);
+    const [lista, setLista] = useState( listaLocalStorage || []);
+    
+    const listaLocalStorage = localStorage.getItem("Lista");
 
+    console.log(localStorage)
+
+    useEffect(() => {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
 
     // A função "procurarArquivo" vai ser chamada quando o usuário escolher uma imagem
     const procurarArquivo = (e) => {
-
 
         //Essa const está acessando a propriedade files do elemento de input do arquivo (e.target.files). Como o "input" aceita vários arquivos, está sendo considerado apenas o primeiro, por isso o índice "[0]"
         //O target é uma referência ao objeto que enviou o evento. Por exemplo, quando você quer captuar o que foi dgitado em um campo input de um form, você utiliza o "event.target.value", ou seja, você irá capturar do input do form o valor que foi digitado.
