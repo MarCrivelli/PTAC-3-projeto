@@ -13,7 +13,7 @@ export default function UparImagem() {
     
     const listaLocalStorage = localStorage.getItem("Lista");
 
-    console.log(localStorage)
+    const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
 
     useEffect(() => {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
 
