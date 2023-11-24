@@ -9,13 +9,8 @@ export default function UparImagem() {
 
 
     //a variável "lista" vai guardar o que o usuário digitar, formando uma lista
-    const [lista, setLista] = useState( listaLocalStorage || []);
     
-    const listaLocalStorage = localStorage.getItem("Lista");
-
-    const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
-
-    useEffect(() => {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
+    
 
     // A função "procurarArquivo" vai ser chamada quando o usuário escolher uma imagem
     const procurarArquivo = (e) => {
